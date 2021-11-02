@@ -48,10 +48,12 @@
           <li v-for="logMessage in logMessages">
             <span>{{ logMessage.actionBy }}</span>
             <span v-if="logMessage.actionType === 'heal'">
-              heals himself for <span class="log--heal">{{logMessage.actionValue}}</span>
+              heals himself for
+              <span class="log--heal">{{logMessage.actionValue}}</span>
             </span>
             <span v-else>
-              attacks and deals <span class="log--damage">{{logMessage.actionValue}}</span> points
+              attacks and deals
+              <span class="log--damage">{{logMessage.actionValue}}</span> points
             </span>
           </li>
         </ul>
