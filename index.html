@@ -46,7 +46,10 @@
         <h2>Battle Log</h2>
         <ul>
           <li v-for="logMessage in logMessages">
-            <span>{{ logMessage.actionBy }}</span>
+            <span
+               :class="{'log--player': logMessage.actionBy === 'Player',
+                        'log--monster': logMessage.actionBy === 'Monster'}"
+            >{{ logMessage.actionBy }}</span>
             <span v-if="logMessage.actionType === 'heal'">
               heals himself for
               <span class="log--heal">{{logMessage.actionValue}}</span>
